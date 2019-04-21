@@ -42,7 +42,7 @@ class Solution {
         val target = strs[0]
         var maxHit = target.length
 
-        for (i in 1..strs.size-1) {
+        for (i in 1 until strs.size) {
             var hit = 0;
             for ((idx, c) in strs[i].withIndex()) {
                 if (target.length > idx && target[idx] == c) {

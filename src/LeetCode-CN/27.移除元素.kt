@@ -83,8 +83,3 @@ class Solution {
         return tail + 1
     }
 }
-
-fun main() {
-    println(Solution().removeElement(intArrayOf(1), 1))
-}
-
