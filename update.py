@@ -12,13 +12,13 @@ import re
 def update_tmp(tmp, src, id, title):
     print(f"Updating tmp for question_{id}. {title}")
     
-    src_file = open(tmp, "r")
+    src_file = open(src, "r")
     src_content = src_file.read()
     src_file.close()
     
     tmp_content = src_content.replace(f"class Question_{id} {'{'}", "class Solution {")
 
-    tmp_file = open(src, "w")
+    tmp_file = open(tmp, "w")
     tmp_file.write(tmp_content)
     tmp_file.close()
 
@@ -40,7 +40,7 @@ def create_src(src, tmp, id, title):
 
 
 SRC_DIR= "src/LeetCode-CN/"
-TMP_DIR="tmp/LeetCode-CN/leetcode/editor/cn/"
+TMP_DIR="tmp/leetcode/editor/cn/"
 
 for item in os.listdir(TMP_DIR):
     if not item.endswith(".kt"):
