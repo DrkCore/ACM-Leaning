@@ -31,7 +31,35 @@ package LeetCodeCN
 
 //leetcode submit region begin(Prohibit modification and deletion)
 class Question_35 {
+
     fun searchInsert(nums: IntArray, target: Int): Int {
+        //使用二分法
+        var leftIdx = 0
+        var rightIdx = nums.size - 1
+        while (leftIdx <= rightIdx) {
+            val middleIdx = (leftIdx + rightIdx) / 2
+            when {
+                nums[middleIdx] == target -> {
+                    //刚好命中，直接返回
+                    return middleIdx
+
+                }
+                nums[middleIdx] < target -> {
+                    //目标值在中心区域的左侧
+                    leftIdx = middleIdx + 1
+                }
+                else -> {
+                    //目标值在中心区域的右侧
+                    rightIdx = middleIdx - 1
+                }
+            }
+        }
+
+        return leftIdx
+    }
+
+    //使用简单的比对方法，遇上较大数组的话性能较差
+    fun searchInsert_V1(nums: IntArray, target: Int): Int {
         for ((idx, v) in nums.withIndex()) {
             if (target <= v) {
                 return idx
