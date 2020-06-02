@@ -8,17 +8,32 @@ import re
 # Operation
 # ==============================================
 
-def parse_kt_code(content, replacement):
+
+def update_tmp(tmp, src, id, title):
+    print(f"Updating tmp for question_{id}. {title}")
     
+    src_file = open(tmp, "r")
+    src_content = src_file.read()
+    src_file.close()
     
+    tmp_content = src_content.replace(f"class Question_{id} {'{'}", "class Solution {")
 
-def update_tmp(tmp, src):
-    print("Updating tmp "+tmp)
+    tmp_file = open(src, "w")
+    tmp_file.write(tmp_content)
+    tmp_file.close()
 
 
-def create_src(src, tmp):
-    print("Creating src "+src)
+def create_src(src, tmp, id, title):
+    print(f"Creating src for question_{id}. {title}")
+    tmp_file = open(tmp, "r")
+    tmp_content = tmp_file.read()
+    tmp_file.close()
+    
+    src_content = tmp_content.replace("class Solution {", f"class Question_{id} {'{'}")
 
+    src_file = open(src, "w")
+    src_file.write(src_content)
+    src_file.close()
 
 # Process 
 # ==============================================
@@ -44,6 +59,6 @@ for item in os.listdir(TMP_DIR):
     src_file=os.path.join(SRC_DIR,src_title)
     tmp_file=os.path.join(TMP_DIR, item)
     if os.path.exists(src_file):
-        update_tmp(tmp_file, src_file)
+        update_tmp(tmp_file, src_file, question_id, title)
     else:
-        create_src(src_file, tmp_file)
+        create_src(src_file, tmp_file, question_id, title)
