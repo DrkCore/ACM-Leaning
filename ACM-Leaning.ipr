@@ -13,6 +13,28 @@
     <option name="apiVersion" value="1.3" />
     <option name="languageVersion" value="1.3" />
   </component>
+  <component name="LeetcodeEditor">
+    <option name="projectConfig">
+      <map>
+        <entry key="$PROJECT_DIR$/tmp/LeetCode-CN/leetcode/editor/cn/[1]两数之和.kt">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/tmp/LeetCode-CN/leetcode/editor/cn/[1]两数之和.kt" />
+              <option name="questionId" value="1" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/tmp/LeetCode-CN/leetcode/editor/cn/[7]整数反转.kt">
+          <value>
+            <LeetcodeEditor>
+              <option name="path" value="$PROJECT_DIR$/tmp/LeetCode-CN/leetcode/editor/cn/[7]整数反转.kt" />
+              <option name="questionId" value="7" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="ProjectCodeStyleConfiguration">
     <option name="USE_PER_PROJECT_SETTINGS" value="true" />
     <code_scheme name="Project" version="173">
