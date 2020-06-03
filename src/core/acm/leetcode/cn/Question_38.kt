@@ -38,15 +38,11 @@ package core.acm.leetcode.cn
 class Question_38 {
 
     fun countAndSay(n: Int): String {
-        var curBuilder = StringBuilder("1")
+        val curBuilder = StringBuilder("1")
         if (n > 1) {
-            var nextBuilder = StringBuilder();
             var i = 1;
             while (++i <= n) {
-                say(curBuilder, nextBuilder)
-                var tmp = curBuilder
-                curBuilder = nextBuilder
-                nextBuilder = tmp
+                say(curBuilder.toString(), curBuilder)
             }
         }
         return curBuilder.toString();
@@ -109,3 +105,10 @@ class Question_38 {
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
+
+fun main() {
+    val question = Question_38()
+    for (i in 1..5) {
+        println(question.countAndSay(i))
+    }
+}
