@@ -1,4 +1,4 @@
-package LeetCodeCN
+package core.acm.leetcode.cn
 
 /**
  * @author DrkCore

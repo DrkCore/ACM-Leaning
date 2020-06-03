@@ -17,7 +17,7 @@ def update_tmp(tmp, src, id, title):
     src_file.close()
     
     tmp_content = src_content.replace(f"class Question_{id} {'{'}", "class Solution {")
-    tmp_content.replace("package LeetCodeCN\n","")
+    tmp_content.replace("package core.acm.leetcode.cn\n","")
 
     tmp_file = open(tmp, "w")
     tmp_file.write(tmp_content)
@@ -31,7 +31,7 @@ def create_src(src, tmp, id, title):
     tmp_file.close()
     
     src_content = tmp_content.replace("class Solution {", f"class Question_{id} {'{'}")
-    src_content = "package LeetCodeCN\n"+src_content
+    src_content = "package core.acm.leetcode.cn\n"+src_content
 
     src_file = open(src, "w")
     src_file.write(src_content)
@@ -41,7 +41,7 @@ def create_src(src, tmp, id, title):
 # ==============================================
 
 
-SRC_DIR= "src/LeetCodeCN/"
+SRC_DIR= "src/core/acm/leetcode/cn/"
 TMP_DIR="tmp/leetcode/editor/cn/"
 
 for item in os.listdir(TMP_DIR):
