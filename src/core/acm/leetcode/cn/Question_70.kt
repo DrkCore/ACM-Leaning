@@ -28,12 +28,13 @@ package core.acm.leetcode.cn
 //leetcode submit region begin(Prohibit modification and deletion)
 class Question_70 {
     fun climbStairs(n: Int): Int {
-        var result = 1
-        var step_prev = 1
-        var step_prev_prev = 0
+        var result = 1 // 当只有一阶的时候结果只有一种
 
+        var step_prev = 1 // 前一阶的结果
+        var step_prev_prev = 0// 前二阶的结果
         for (i in 1..n) {
-            result = step_prev + step_prev_prev
+            result = step_prev + step_prev_prev// 走到目标格要么是从上一阶走一步，要么是前二阶走两步
+            //更新前面的阶数
             step_prev_prev = step_prev
             step_prev = result
         }
